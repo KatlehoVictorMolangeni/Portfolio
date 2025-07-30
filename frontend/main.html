@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katleho Victor | Portfolio</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
+ 
+
+
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">Katleho Victor</div>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+    </ul>
+  </nav>
+  <div class="social-bar">
+    <a href="https://www.linkedin.com/in/katleho-victor-molangeni-080500313/" target="_blank"><i
+        class="fab fa-linkedin-in"></i></a>
+    <a href="https://github.com/KatlehoVictorMolangeni" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="mailto:molangenikatleho00@email.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    <a href="tel:+27694414727" target="_blank"><i class="fas fa-phone"></i></a>
+  </div>
+
+  <div class="home-container">
+    <!-- LEFT SIDE: Text Content -->
+    <div class="home">
+      <div class="aesthetic-box"></div>
+
+      <p class="intro">Hi There👋🏾 Recruiter, I am</p>
+
+      <h1>
+        Katleho Victor <br />
+        <span class="surname">Molangeni</span>
+      </h1>
+
+      <p class="aspiring">
+        Aspiring Software Engineer/Developer <br />
+        <i class="fas fa-code code-icon"></i>
+      </p>
+
+     <button class="btn resume-btn">
+  <a href="CV.pdf" download>
+    <i class="fas fa-download"></i> My Resume
+  </a>
+</button>
+
+    </div>
+
+    <!-- RIGHT SIDE: Profile Image with Blossom Circle -->
+    <div class="home-image">
+      <div class="circle-glow">
+        <img src="homePicture.png" alt="Katleho Profile" />
+      </div>
+    </div>
+  </div>
+
+ <!-- FIXED CHAT ENGAGEMENT BUTTON -->
+<div class="chat-engage">
+  <a href="#chatbot">
+    <i class="fas fa-comment-dots"></i>
+    <span>Ask Soso.AI</span>
+  </a>
+</div>
+
+<!-- CHATBOT POPUP WINDOW -->
+<div id="chatbot" class="chatbot-window hidden">
+  <div class="chatbot-header">
+    <h4>Soso – Katleho's Assistant</h4>
+    <button id="closeChat" class="close-btn">&times;</button>
+  </div>
+  <div id="chatLog" class="chat-log"></div>
+</div>
+
+
+
+  <section id="about" class="about-section">
+    <div class="about-content">
+      <h2 class="about-heading">More Of My Story</h2>
+      <p>
+        I am an dedicated and ambitious ICT (Application Development) student at Sol Plaatje University, with a
+        strong passion for building practical, user-focused digital
+      </p>
+      <p>
+        My interests lie in Software development, software testing, and database management. Through hackathons,
+        mentorships, and personal projects, I’ve built not just skills but confidence in delivering practical
+        digital solutions.
+      </p>
+      <p>
+        I believe in continuous learning, creativity, and community — and I’m eager to bring those values into
+        every project I take on.
+      </p>
+    </div>
+
+    <div class="about-image-wrapper">
+      <div class="about-image-circle">
+        <img src="jg.jpg" alt="Katleho Profile" />
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section" id="skills">
+    <h2 class="section-title-skill">My Skill Set</h2>
+    <div class="skills-grid">
+
+      <!-- Programming Languages -->
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+        <ul>
+          <li><i class="fab fa-java"></i> Java</li>
+          <li><i class="fab fa-js-square"></i> JavaScript</li>
+          <li><i class="fab fa-python"></i> Python</li>
+          <li><i class="fas fa-code"></i> C#</li>
+        </ul>
+      </div>
+
+      <!-- Databases -->
+      <div class="skill-category">
+        <h3><i class="fas fa-database"></i> Databases</h3>
+        <ul>
+          <li><i class="fas fa-database"></i> MySQL</li>
+          <li><i class="fas fa-database"></i> PostgreSQL</li>
+          <li><i class="fas fa-database"></i> MongoDB</li>
+        </ul>
+      </div>
+
+      <!-- Frameworks -->
+      <div class="skill-category">
+        <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
+        <ul>
+          <li><i class="fab fa-react"></i> React.js</li>
+          <li><i class="fab fa-node"></i> Node.js</li>
+          <li><i class="fab fa-microsoft"></i> ASP.NET (Basic)</li>
+          <li><i class="fab fa-python"></i> Django</li>
+        </ul>
+      </div>
+
+      <!-- Tools & Technologies -->
+      <div class="skill-category">
+        <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+        <ul>
+          <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+          <li><i class="fas fa-vial"></i> Software Testing</li>
+          <li><i class="fas fa-terminal"></i> VS Code</li>
+          <li><i class="fab fa-html5"></i> HTML</li>
+          <li><i class="fab fa-css3-alt"></i> CSS</li>
+          <li><i class="fas fa-mobile-alt"></i> Android Studio</li>
+        </ul>
+      </div>
+
+      <!-- Leadership & Methodologies -->
+      <div class="skill-category">
+        <h3><i class="fas fa-users"></i> Leadership & Methodologies</h3>
+        <ul>
+          <li><i class="fas fa-sitemap"></i> Agile & Scrum</li>
+          <li><i class="fas fa-chalkboard-teacher"></i> Peer Mentorship (FASSET)</li>
+          <li><i class="fas fa-lightbulb"></i> Problem Solving</li>
+          <li><i class="fas fa-hands-helping"></i> Team Collaboration</li>
+        </ul>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="skill-category">
+        <h3><i class="fas fa-heart"></i> Soft Skills</h3>
+        <ul>
+          <li><i class="fas fa-comments"></i> Communication</li>
+          <li><i class="fas fa-user-clock"></i> Time Management</li>
+          <li><i class="fas fa-brain"></i> Critical Thinking</li>
+          <li><i class="fas fa-user-friends"></i> Adaptability</li>
+          <li><i class="fas fa-handshake"></i> Work Ethic</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="projects" class="timeline-section">
+    <h2 class="section-title-project"><i class="fas fa-project-diagram"></i> Projects I've Built</h2>
+
+    <div class="timeline">
+
+      <!-- Ko-Kasi -->
+      <div class="timeline-item left">
+        <div class="content">
+          <h3><i class="fas fa-city"></i> Ko-Kasi</h3>
+          <p><strong>Role:</strong> UI/UX Designer & Frontend Developer</p>
+          <p>A community-driven platform connecting people in townships through digital listings and updates.</p>
+          <p><strong>Tools:</strong> <i class="fab fa-html5"></i> HTML, <i class="fab fa-css3-alt"></i> CSS, <i
+              class="fab fa-js-square"></i> JavaScript</p>
+          <a href="https://github.com/KatlehoVictorMolangeni/Ko-kasi" target="_blank" class="project-btn">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- KatlehoM -->
+      <div class="timeline-item right">
+        <div class="content">
+          <h3><i class="fas fa-hard-hat"></i> KatlehoM</h3>
+          <p><strong>Role:</strong> Web Designer & React Developer</p>
+          <p>Construction safety company site with animated navigation and WhatsApp contact.</p>
+          <p><strong>Tools:</strong> <i class="fab fa-react"></i> React, <i class="fab fa-css3-alt"></i> CSS, <i
+              class="fas fa-envelope"></i> EmailJS</p>
+          <a href="https://github.com/KatlehoVictorMolangeni/KatlehoM-Consultants" target="_blank" class="project-btn">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Uni-coApply -->
+      <div class="timeline-item left">
+        <div class="content">
+          <h3><i class="fas fa-university"></i> Uni-coApply</h3>
+          <p><strong>Role:</strong> Frontend Developer</p>
+          <p>A site that helps Matric students apply to universities and track their application status.</p>
+          <p><strong>Tools:</strong> <i class="fab fa-html5"></i> HTML, <i class="fab fa-css3-alt"></i> CSS, <i
+              class="fab fa-js-square"></i> JavaScript</p>
+          <a href="https://github.com/KatlehoVictorMolangeni/Unico-Apply" target="_blank" class="project-btn">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Calculator -->
+      <div class="timeline-item right">
+        <div class="content">
+          <h3><i class="fas fa-calculator"></i> Calculator App</h3>
+          <p><strong>Role:</strong> Frontend Developer</p>
+          <p>A fully responsive calculator for basic math operations using JavaScript DOM manipulation.</p>
+          <p><strong>Tools:</strong> <i class="fab fa-js-square"></i> JavaScript, <i class="fab fa-html5"></i> HTML, <i
+              class="fab fa-css3-alt"></i> CSS</p>
+          <a href="https://github.com/KatlehoVictorMolangeni/Calculator" target="_blank" class="project-btn">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Contacts App -->
+      <div class="timeline-item left">
+        <div class="content">
+          <h3><i class="fas fa-address-book"></i> Contacts App</h3>
+          <p><strong>Role:</strong> Backend Developer</p>
+          <p>A simple contact manager where users can add, delete, and search contact details securely.</p>
+          <p><strong>Tools:</strong> <i class="fab fa-node"></i> Node.js, <i class="fas fa-database"></i> MongoDB</p>
+          <a href="https://github.com/KatlehoVictorMolangeni/Contacts-Page" target="_blank" class="project-btn">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- HearThem -->
+      <div class="timeline-item right">
+        <div class="content">
+          <h3><i class="fas fa-bullhorn"></i> HearThem</h3>
+          <p><strong>Role:</strong> Full Stack Developer</p>
+          <p>
+            A voice-driven platform built to amplify the voices of GBV (Gender-Based Violence) victims in South Africa.
+            It allows users to leave and listen to anonymous audio messages as a form of support and awareness.
+          </p>
+          <p><strong>Tools:</strong><i class="fab fa-java"></i> Java (JFrame), <i class="fas fa-database"></i> MySQL</p>
+          <a href="https://github.com/KatlehoVictorMolangeni/HearThem" target="_blank" class="project-btn">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section id="experience" class="experience-section">
+    <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+
+    <div class="experience-row">
+      <div class="experience-date">
+        <i class="fas fa-calendar-alt"></i> Feb 2024 - Nov 2024
+      </div>
+      <div class="experience-details">
+        <h3><i class="fas fa-user-graduate"></i> ICT Student Assistant</h3>
+        <p><strong>Institution:</strong> Sol Plaatje University</p>
+        <p>Provided programming mentorship and assisted first-year ICT students in grasping coding concepts and software
+          tools.</p>
+      </div>
+    </div>
+
+    <div class="experience-row">
+      <div class="experience-date">
+        <i class="fas fa-calendar-alt"></i> Jul 2025 - Present
+      </div>
+      <div class="experience-details">
+        <h3><i class="fas fa-user-graduate"></i> ICT Student Assistant</h3>
+        <p><strong>Institution:</strong> Sol Plaatje University</p>
+        <p>Ongoing role supporting students, organizing coding workshops, and helping develop curriculum content for ICT
+          courses.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements" class="achievements-section">
+    <h2 class="section-title"><i class="fas fa-award"></i> Achievements & Certificates</h2>
+
+    <!-- My Qualification -->
+    <h3 class="sub-heading">🎓 My Qualification</h3>
+    <div class="card-grid">
+      <div class="achievement-card">
+        <div class="icon-circle qualification">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="card-content">
+          <h3>Diploma in ICT (Application Development)</h3>
+          <p>Sol Plaatje University</p>
+          <p><em>Graduation Expected: 2026</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificates -->
+    <h3 class="sub-heading">📜 Certificates</h3>
+    <div class="card-grid">
+
+      <div class="achievement-card">
+        <div class="icon-circle"><i class="fas fa-medal"></i></div>
+        <div class="card-content">
+          <h3>FNB App Academy – App Development</h3>
+          <p>FNB South Africa</p>
+          <small>Issued: Jul 2025</small>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="icon-circle"><i class="fas fa-medal"></i></div>
+        <div class="card-content">
+          <h3>Alibaba Cloud – RDS Technical Operations</h3>
+          <p>Alibaba Cloud</p>
+          <small>Issued: Jun 2025 · Expires: Jun 2027</small>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="icon-circle"><i class="fas fa-medal"></i></div>
+        <div class="card-content">
+          <h3>MySQL for Beginners – Basic Queries</h3>
+          <p>Alibaba Cloud</p>
+          <small>Issued: Jun 2025 · Expires: Jun 2027</small>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="icon-circle"><i class="fas fa-medal"></i></div>
+        <div class="card-content">
+          <h3>Aspara Clouder – Artificial Intelligence</h3>
+          <p>Alibaba Cloud</p>
+          <small>Issued: May 2025 · Expires: May 2027</small>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="icon-circle"><i class="fas fa-medal"></i></div>
+        <div class="card-content">
+          <h3>Microsoft AI Fluency Course</h3>
+          <p>Microsoft</p>
+          <small>Issued: Apr 2025</small>
+        </div>
+      </div>
+
+      <!-- New Certificate: Alibaba Cloud - AI Avatar -->
+      <div class="achievement-card">
+        <div class="icon-circle"><i class="fas fa-medal"></i></div>
+        <div class="card-content">
+          <h3>Live AI Avatar Agent for Your Website in 60 Minutes</h3>
+          <p>Alibaba Cloud</p>
+          <small>Issued: Jul 2025 · Expires: Jul 2027</small>
+        </div>
+      </div>
+
+      <!-- New Certificate: Google UX -->
+      <div class="achievement-card">
+        <div class="icon-circle"><i class="fas fa-medal"></i></div>
+        <div class="card-content">
+          <h3>Ask Questions to Make Data-Driven Decisions</h3>
+          <p>Google</p>
+          <small>Issued: Jun 2025</small>
+        </div>
+      </div>
+
+      <!-- New Certificate: Google Digital Skills -->
+      <div class="achievement-card">
+        <div class="icon-circle"><i class="fas fa-medal"></i></div>
+        <div class="card-content">
+          <h3>Foundations: Data, Data, Everywhere</h3>
+          <p>Google</p>
+          <small>Issued: May 2025</small>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+    <!-- Awards -->
+    <h3 class="sub-heading">🏆 Awards</h3>
+    <div class="card-grid">
+      <div class="achievement-card">
+        <div class="icon-circle gold"><i class="fas fa-trophy"></i></div>
+        <div class="card-content">
+          <h3>Certificate of Academic Excellence – 1st Place</h3>
+          <p>Sol Plaatje University</p>
+          <small>May 2025</small>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="icon-circle gold"><i class="fas fa-trophy"></i></div>
+        <div class="card-content">
+          <h3>Best Performing 2nd Year – 1st Place</h3>
+          <p>Sol Plaatje University</p>
+          <small>May 2025</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recognition -->
+    <h3 class="sub-heading">🌟 Recognition</h3>
+    <div class="recognition-box">
+      <i class="fas fa-star recognition-icon"></i>
+      <p><strong>Recognized by Golden Key Southern Africa</strong> for outstanding academic achievement.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+<section class="contact-section">
+  <h2>🚀 Let's Build Something Great Together</h2>
+  <p>I'm open to graduate programmes, internships, freelance gigs, or collaborative tech projects. Let’s turn ideas into reality!</p>
+
+  <div class="contact-buttons">
+    <a href="mailto:molangenikatleho00@gmail.com" class="btn primary-btn">
+      <i class="fas fa-envelope"></i> Email Me
+    </a>
+    <a href="www.linkedin.com/in/katleho-victor-molangeni-080500313" target="_blank" class="btn secondary-btn">
+      <i class="fab fa-linkedin"></i> Connect on LinkedIn
+    </a>
+  </div>
+
+  <div class="contact-tags">
+    🤝 Open to opportunities • 💼 Freelance & Collabs • ⚡ Fast Response
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 Katleho Victor. All rights reserved. Built with <span class="heart">❤️</span></p>
+</footer>
+
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('change', function () {
+      if (menuToggle.checked) {
+        navLinks.style.display = 'block';
+      } else {
+        navLinks.style.display = 'none';
+      }
+    });
+  });
+
+
+
+  const chatLink = document.querySelector(".chat-engage a");
+  const chatbot = document.getElementById("chatbot");
+  const closeChat = document.getElementById("closeChat");
+  const chatLog = document.getElementById("chatLog");
+
+  const responses = {
+    skills: "Katleho possesses a well-rounded skill set that includes both soft and technical abilities, making him a strong candidate in any role he takes on. His soft skills include being team-oriented, an effective communicator, and highly collaborative. On the technical side, he is proficient in Java, React.js, JavaScript, Python, MySQL, HTML/CSS, networking, and software testing.",
+    experience: "Although Katleho is still pursuing his studies at university, he has had the privilege of working as an ICT Student Assistant — a role he currently holds — where he supports fellow students with programming and tech-related challenges. In addition, he has built several impactful projects for hackathons aimed at solving real-world problems, as well as academic and personal projects such as MusiLife and uni-coApply.",
+achievements: "Katleho was recently recognized by the Golden Key International Honour Society for his outstanding academic performance. He holds over six professional certificates, including credentials from Alibaba Cloud and Google, which have deepened his understanding of Artificial Intelligence and digital innovation. In his academic journey, Katleho has also received two major awards — achieving first place in both — further highlighting his commitment to excellence and continuous growth.",
+    projects: "Katleho has worked on several meaningful projects that reflect both his technical skills and social awareness. These include 'hearThem', a safety platform designed to support and protect victims of gender-based violence (GBV); 'uni-coApply', an application platform that helps South African Matric students apply to higher education institutions; and 'KatlehoM', a professional website for a construction health and safety consultancy. Each project showcases his ability to apply technology to real-world challenges and community needs.",
+    more: "Katleho is currently in his final year of study and has performed exceptionally well in his first semester. He is actively seeking opportunities and is open to work, particularly in roles where he can contribute his skills and grow professionally. Katleho is also expanding his knowledge in software testing and is preparing to earn his ISTQB certification in 2025.",
+
+  };
+
+  chatLink.onclick = (e) => {
+    e.preventDefault();
+    chatbot.classList.remove("hidden");
+    displayGreeting();
+  };
+
+  closeChat.onclick = () => chatbot.classList.add("hidden");
+
+  function displayGreeting() {
+    chatLog.innerHTML = "";
+    addMessage("bot-msg", "Hi there! I'm Soso, Katleho's assistant. What would you like to know about Katleho?");
+    addOptionButtons();
+  }
+
+  function handleOptionClick(key) {
+    addMessage("user-msg", key.charAt(0).toUpperCase() + key.slice(1));
+    removeOptionButtons();
+    showTypingIndicator();
+
+    setTimeout(() => {
+      removeTypingIndicator();
+      addMessage("bot-msg", responses[key] || "Sorry, I don’t have info on that.");
+      addOptionButtons();
+    }, 1500); // 1.5s delay to simulate thinking
+  }
+
+  function addMessage(type, text) {
+    const msg = document.createElement("div");
+    msg.className = type;
+    msg.textContent = text;
+    chatLog.appendChild(msg);
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
+  function addOptionButtons() {
+    const existingButtons = document.querySelector(".button-container");
+    if (existingButtons) return;
+
+    const options = ["Skills", "Experience", "Achievements", "Projects", "More"];
+    const buttonContainer = document.createElement("div");
+    buttonContainer.className = "button-container";
+
+    options.forEach(option => {
+      const btn = document.createElement("button");
+      btn.className = "option-button";
+      btn.textContent = option;
+      btn.onclick = () => handleOptionClick(option.toLowerCase());
+      buttonContainer.appendChild(btn);
+    });
+
+    chatLog.appendChild(buttonContainer);
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
+  function removeOptionButtons() {
+    const buttons = document.querySelector(".button-container");
+    if (buttons) buttons.remove();
+  }
+
+  function showTypingIndicator() {
+    const typing = document.createElement("div");
+    typing.className = "typing-indicator";
+    typing.id = "typingIndicator";
+    typing.innerHTML = `
+      <span>Soso is thinking</span>
+      <span class="dot one">.</span>
+      <span class="dot two">.</span>
+      <span class="dot three">.</span>
+    `;
+    chatLog.appendChild(typing);
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
+  function removeTypingIndicator() {
+    const typing = document.getElementById("typingIndicator");
+    if (typing) typing.remove();
+  }
+</script>
