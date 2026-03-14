@@ -54,7 +54,7 @@
       </p>
 
      <button class="btn resume-btn">
-  <a href="CV.pdf" download>
+  <a href="Katleho_Victor_Molangeni_CV.pdf" download>
     <i class="fas fa-download"></i> My Resume
   </a>
 </button>
@@ -91,19 +91,17 @@
   <section id="about" class="about-section">
     <div class="about-content">
       <h2 class="about-heading">More Of My Story</h2>
-      <p>
-        I am an dedicated and ambitious ICT (Application Development) student at Sol Plaatje University, with a
-        strong passion for building practical, user-focused digital
-      </p>
-      <p>
-        My interests lie in Software development, software testing, and database management. Through hackathons,
-        mentorships, and personal projects, I’ve built not just skills but confidence in delivering practical
-        digital solutions.
-      </p>
-      <p>
-        I believe in continuous learning, creativity, and community — and I’m eager to bring those values into
-        every project I take on.
-      </p>
+     <p>
+I am an ICT (Application Development) graduate from Sol Plaatje University, graduating with Cum Laude distinction. I am passionate about creating practical, user-centered digital solutions and enjoy transforming ideas into functional applications using modern web technologies and software development practices.
+</p>
+
+<p>
+My interests lie in software engineering and cloud technologies, with a focus on building scalable and efficient applications. Through hackathons, mentorship programs, and personal projects, I have developed both the technical skills and confidence needed to design and deliver practical real-world digital solutions.
+</p>
+
+<p>
+I believe in continuous learning, innovation, and collaboration, and I strive to bring these values into every project I contribute to as I continue growing as a software engineer.
+</p>
     </div>
 
     <div class="about-image-wrapper">
@@ -498,95 +496,159 @@
 
 
 
-  const chatLink = document.querySelector(".chat-engage a");
-  const chatbot = document.getElementById("chatbot");
-  const closeChat = document.getElementById("closeChat");
-  const chatLog = document.getElementById("chatLog");
+const chatLink = document.querySelector(".chat-engage a");
+const chatbot = document.getElementById("chatbot");
+const closeChat = document.getElementById("closeChat");
+const chatLog = document.getElementById("chatLog");
 
-  const responses = {
-    skills: "Katleho possesses a well-rounded skill set that includes both soft and technical abilities, making him a strong candidate in any role he takes on. His soft skills include being team-oriented, an effective communicator, and highly collaborative. On the technical side, he is proficient in Java, React.js, JavaScript, Python, MySQL, HTML/CSS, networking, and software testing.",
-    experience: "Although Katleho is still pursuing his studies at university, he has had the privilege of working as an ICT Student Assistant — a role he currently holds — where he supports fellow students with programming and tech-related challenges. In addition, he has built several impactful projects for hackathons aimed at solving real-world problems, as well as academic and personal projects such as MusiLife and uni-coApply.",
-achievements: "Katleho was recently recognized by the Golden Key International Honour Society for his outstanding academic performance. He holds over six professional certificates, including credentials from Alibaba Cloud and Google, which have deepened his understanding of Artificial Intelligence and digital innovation. In his academic journey, Katleho has also received two major awards — achieving first place in both — further highlighting his commitment to excellence and continuous growth.",
-    projects: "Katleho has worked on several meaningful projects that reflect both his technical skills and social awareness. These include 'hearThem', a safety platform designed to support and protect victims of gender-based violence (GBV); 'uni-coApply', an application platform that helps South African Matric students apply to higher education institutions; and 'KatlehoM', a professional website for a construction health and safety consultancy. Each project showcases his ability to apply technology to real-world challenges and community needs.",
-    more: "Katleho is currently in his final year of study and has performed exceptionally well in his first semester. He is actively seeking opportunities and is open to work, particularly in roles where he can contribute his skills and grow professionally. Katleho is also expanding his knowledge in software testing and is preparing to earn his ISTQB certification in 2025.",
+// Open chatbot
+chatLink.onclick = (e) => {
+  e.preventDefault();
+  chatbot.classList.remove("hidden");
+  displayGreeting();
+};
 
+// Close chatbot
+closeChat.onclick = () => chatbot.classList.add("hidden");
+
+// Initial greeting
+function displayGreeting() {
+  chatLog.innerHTML = "";
+  addMessage("bot-msg", "Hi there! I'm Soso, Katleho's AI assistant. Ask me anything or click a quick question below.");
+  addOptionButtons();
+  addUserInput();
+}
+
+// Handle both button and typed questions
+async function handleQuestion(message) {
+  if (!message || message.trim() === "") return;
+
+  addMessage("user-msg", message);
+  removeOptionButtons();
+  showTypingIndicator();
+
+  try {
+    const reply = await getBotResponse(message);
+    removeTypingIndicator();
+    addMessage("bot-msg", reply);
+  } catch (err) {
+    removeTypingIndicator();
+    addMessage("bot-msg", "Sorry, I couldn't connect to the assistant.");
+  }
+
+  addOptionButtons();
+}
+
+// Call Netlify Function
+async function getBotResponse(message) {
+  const res = await fetch("/.netlify/functions/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message })
+  });
+  const data = await res.json();
+  return data.reply;
+}
+
+// Add message to chat log
+function addMessage(type, text) {
+  const msg = document.createElement("div");
+  msg.className = type;
+  msg.textContent = text;
+  msg.style.opacity = 0;
+  chatLog.appendChild(msg);
+
+  // Animate fade-in
+  setTimeout(() => { msg.style.opacity = 1; }, 50);
+
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+
+// Add quick option buttons
+function addOptionButtons() {
+  if (document.querySelector(".button-container")) return;
+
+  const questions = [
+    "What skills does Katleho have?",
+    "What experience does Katleho have?",
+    "What achievements does Katleho have?",
+    "What projects has Katleho built?",
+    "Is Katleho available for work?"
+  ];
+
+  const container = document.createElement("div");
+  container.className = "button-container";
+
+  questions.forEach(q => {
+    const btn = document.createElement("button");
+    btn.className = "option-button";
+    btn.textContent = q;
+    btn.onclick = () => handleQuestion(q);
+    container.appendChild(btn);
+  });
+
+  chatLog.appendChild(container);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+
+// Remove buttons
+function removeOptionButtons() {
+  const btns = document.querySelector(".button-container");
+  if (btns) btns.remove();
+}
+
+// Typing indicator
+function showTypingIndicator() {
+  removeTypingIndicator();
+  const typing = document.createElement("div");
+  typing.className = "typing-indicator";
+  typing.id = "typingIndicator";
+  typing.innerHTML = `
+    <span>Soso is thinking</span>
+    <span class="dot one">.</span>
+    <span class="dot two">.</span>
+    <span class="dot three">.</span>
+  `;
+  chatLog.appendChild(typing);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
+
+function removeTypingIndicator() {
+  const typing = document.getElementById("typingIndicator");
+  if (typing) typing.remove();
+}
+
+// Add input field for user
+function addUserInput() {
+  if (document.getElementById("userInputContainer")) return;
+
+  const container = document.createElement("div");
+  container.id = "userInputContainer";
+  container.className = "user-input-container";
+
+  const input = document.createElement("input");
+  input.id = "userInput";
+  input.type = "text";
+  input.placeholder = "Type your question...";
+  input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" && input.value.trim() !== "") {
+      handleQuestion(input.value.trim());
+      input.value = "";
+    }
+  });
+
+  const sendBtn = document.createElement("button");
+  sendBtn.textContent = "Send";
+  sendBtn.onclick = () => {
+    if (input.value.trim() !== "") {
+      handleQuestion(input.value.trim());
+      input.value = "";
+    }
   };
 
-  chatLink.onclick = (e) => {
-    e.preventDefault();
-    chatbot.classList.remove("hidden");
-    displayGreeting();
-  };
-
-  closeChat.onclick = () => chatbot.classList.add("hidden");
-
-  function displayGreeting() {
-    chatLog.innerHTML = "";
-    addMessage("bot-msg", "Hi there! I'm Soso, Katleho's assistant. What would you like to know about Katleho?");
-    addOptionButtons();
-  }
-
-  function handleOptionClick(key) {
-    addMessage("user-msg", key.charAt(0).toUpperCase() + key.slice(1));
-    removeOptionButtons();
-    showTypingIndicator();
-
-    setTimeout(() => {
-      removeTypingIndicator();
-      addMessage("bot-msg", responses[key] || "Sorry, I don’t have info on that.");
-      addOptionButtons();
-    }, 1500); // 1.5s delay to simulate thinking
-  }
-
-  function addMessage(type, text) {
-    const msg = document.createElement("div");
-    msg.className = type;
-    msg.textContent = text;
-    chatLog.appendChild(msg);
-    chatLog.scrollTop = chatLog.scrollHeight;
-  }
-
-  function addOptionButtons() {
-    const existingButtons = document.querySelector(".button-container");
-    if (existingButtons) return;
-
-    const options = ["Skills", "Experience", "Achievements", "Projects", "More"];
-    const buttonContainer = document.createElement("div");
-    buttonContainer.className = "button-container";
-
-    options.forEach(option => {
-      const btn = document.createElement("button");
-      btn.className = "option-button";
-      btn.textContent = option;
-      btn.onclick = () => handleOptionClick(option.toLowerCase());
-      buttonContainer.appendChild(btn);
-    });
-
-    chatLog.appendChild(buttonContainer);
-    chatLog.scrollTop = chatLog.scrollHeight;
-  }
-
-  function removeOptionButtons() {
-    const buttons = document.querySelector(".button-container");
-    if (buttons) buttons.remove();
-  }
-
-  function showTypingIndicator() {
-    const typing = document.createElement("div");
-    typing.className = "typing-indicator";
-    typing.id = "typingIndicator";
-    typing.innerHTML = `
-      <span>Soso is thinking</span>
-      <span class="dot one">.</span>
-      <span class="dot two">.</span>
-      <span class="dot three">.</span>
-    `;
-    chatLog.appendChild(typing);
-    chatLog.scrollTop = chatLog.scrollHeight;
-  }
-
-  function removeTypingIndicator() {
-    const typing = document.getElementById("typingIndicator");
-    if (typing) typing.remove();
-  }
+  container.appendChild(input);
+  container.appendChild(sendBtn);
+  chatLog.appendChild(container);
+  chatLog.scrollTop = chatLog.scrollHeight;
+}
 </script>

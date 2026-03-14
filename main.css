@@ -909,14 +909,16 @@ h1 {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .bot-msg, .user-msg {
-  background: #030174;
   padding: 8px 12px;
-  margin: 6px 0;
   border-radius: 16px;
   max-width: 90%;
+  word-wrap: break-word;
 }
 
 .user-msg {
@@ -928,6 +930,7 @@ h1 {
 
 .bot-msg {
   background-color: #00163b;
+  color: #e0e0e0;
 }
 
 .option-button {
@@ -940,6 +943,7 @@ h1 {
   border-radius: 20px;
   cursor: pointer;
   transition: background 0.3s;
+  font-size: 14px;
 }
 
 .option-button:hover {
@@ -986,4 +990,43 @@ h1 {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------- USER INPUT AREA --------------------- */
+.user-input-container {
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px;
+  border-top: 1px solid #444;
+  background-color: #2a0040;
+}
+
+.user-input-container input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #555;
+  background-color: #3a004f;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.user-input-container input::placeholder {
+  color: #bbb;
+}
+
+.user-input-container button {
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.user-input-container button:hover {
+  background-color: #0056b3;
 }
